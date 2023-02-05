@@ -31,7 +31,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyPick<T, K> = any
+type MyPick<TObject, TKeys extends keyof TObject> = {
+  [K in TKeys]: TObject[K]
+}
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
