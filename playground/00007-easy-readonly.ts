@@ -31,7 +31,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyReadonly<T> = any
+type MyReadonly<TObject> = {
+  readonly [TKey in keyof TObject]: TObject[TKey]
+}
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
